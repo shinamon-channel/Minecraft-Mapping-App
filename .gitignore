@@ -1,0 +1,5 @@
+.DS_Store
+platforms/browser/
+platforms/ios/
+node_modules/
+plugins/
