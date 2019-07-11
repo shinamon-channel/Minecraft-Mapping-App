@@ -5,6 +5,8 @@
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
   "scripts": {
+    "build-riot": "riot www/tags --output www/pages",
+    "build-riot:w": "riot --watch www/tags --output www/pages",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
