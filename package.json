@@ -7,6 +7,8 @@
   "scripts": {
     "build-webpack": "webpack --mode development",
     "build-webpack:w": "webpack --mode development --watch",
+    "browser": "npm run build-webpack && cordova run browser",
+    "build-ios": "npm run build-webpack && cordova build ios",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
