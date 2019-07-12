@@ -19,6 +19,7 @@
   "dependencies": {
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.0.1",
+    "cordova-plugin-statusbar": "^2.4.3",
     "org.apache.cordova.geolocation": "^0.3.6",
     "riot": "^4.3.5"
   },
@@ -37,7 +38,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "org.apache.cordova.geolocation": {}
+      "org.apache.cordova.geolocation": {},
+      "cordova-plugin-statusbar": {}
     },
     "platforms": [
       "browser",

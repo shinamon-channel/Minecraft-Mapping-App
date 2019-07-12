@@ -26,4 +26,6 @@
     <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
       <string>need location access to find things nearby</string>
     </edit-config>
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#6E4932" />
 </widget>
