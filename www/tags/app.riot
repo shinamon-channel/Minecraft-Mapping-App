@@ -1,11 +1,11 @@
 <app>
-
-  <div>{state.sentence}</div>
+  <img src="{state.logo_path}">
+  <div id="map"></div>
 
   <script>
     export default {
       onMounted() {
-        this.state.sentence = "This is App component"
+        this.state.logo_path = 'img/logo.png'
 
         this.update({
         })

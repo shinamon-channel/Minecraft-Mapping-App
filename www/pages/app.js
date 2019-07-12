@@ -3,7 +3,7 @@ var app = {
 
   'exports': {
     onMounted() {
-      this.state.sentence = "This is App component";
+      this.state.logo_path = '../img/logo.png';
 
       this.update({
       });
@@ -11,16 +11,16 @@ var app = {
   },
 
   'template': function(template, expressionTypes, bindingTypes, getComponent) {
-    return template('<div expr0><!----></div>', [{
+    return template('<img expr0/><div id="map"></div>', [{
       'redundantAttribute': 'expr0',
       'selector': '[expr0]',
 
       'expressions': [{
-        'type': expressionTypes.TEXT,
-        'childNodeIndex': 0,
+        'type': expressionTypes.ATTRIBUTE,
+        'name': 'src',
 
         'evaluate': function(scope) {
-          return scope.state.sentence;
+          return scope.state.logo_path;
         }
       }]
     }]);
