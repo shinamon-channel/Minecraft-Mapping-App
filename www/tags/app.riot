@@ -21,16 +21,21 @@
       </div>
     </div>
 
-    <footer id="footer_root">footer</footer>
+    <hotbar></hotbar>
   </div>
 
   <script>
+    import Hotbar from './hotbar.riot'
+
     export default {
       onMounted() {
         this.state.logo_path = 'img/logo.png'
 
         this.update({
         })
+      },
+      components: {
+        Hotbar
       }
     }
   </script>
@@ -77,18 +82,9 @@
     div#contoroller {
       flex-grow: 1;
       padding: 0;
-      margin: 0 0 calc(100vw / 10);
+      margin: 0 0 calc(100vw / 7);
       width: 100vw;
       background-color: red;
-    }
-
-    footer#footer_root {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: calc(100vw / 10);
-      width: 100vw;
-      background-color: white;
     }
   </style>
 </app>

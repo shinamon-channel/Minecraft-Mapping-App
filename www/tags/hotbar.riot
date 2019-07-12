@@ -1,0 +1,80 @@
+<hotbar>
+  <ul id="hotbar_root">
+    <li class="map-list" each={ item in items }>
+      <button class="map-button" value="item.img_path">
+        <img class="map" src={ item.is_writing ? 'img/map_writing.png' : 'img/map_no_writing.png'}></img>
+      </button>
+    </li>
+  </ul>
+
+  <script>
+    export default {
+      items: [
+        {
+          img_path: "hoge/fuga.png",
+          is_writing: false
+        },
+        {
+          img_path: "hoge/fuga.png",
+          is_writing: false
+        },
+        {
+          img_path: "hoge/fuga.png",
+          is_writing: true
+        },
+        {
+          img_path: "hoge/fuga.png",
+          is_writing: false
+        },
+        {
+          img_path: "hoge/fuga.png",
+          is_writing: false
+        },
+        {
+          img_path: "hoge/fuga.png",
+          is_writing: false
+        }
+      ]
+    }
+  </script>
+
+  <style scoped>
+    ul#hotbar_root {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 3px;
+      margin: 0;
+      height: calc(100vw / 7);
+      width: calc(100vw - 6px);
+      background-color: #DBDDE9;
+    }
+
+    li.map-list {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 3px;
+      height: 90%;
+    }
+
+    button.map-button {
+      height: 100%;
+      width: 100%;
+      background-color: #59636A;
+    }
+
+    img.map {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: auto;
+      height: 80%;
+    }
+  </style>
+</hotbar>
