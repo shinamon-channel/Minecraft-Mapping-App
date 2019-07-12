@@ -1,6 +1,28 @@
 <app>
-  <img src="{state.logo_path}">
-  <div id="map"></div>
+  <div id="app_root">
+    <div class="flex-wrapper">
+      <img id="app_logo" src="{state.logo_path}">
+
+      <div id="map_wrapper">
+        <div id="map"></div>
+      </div>
+
+      <div id="contoroller">
+        <ul id="buttons">
+          <ul id="items">
+            <item-button></item-button>
+            <item-button></item-button>
+          </ul>
+
+          <chest-button></chest-button>
+        </ul>
+
+        <steve-model></steve-model>
+      </div>
+    </div>
+
+    <footer id="footer_root">footer</footer>
+  </div>
 
   <script>
     export default {
@@ -12,4 +34,61 @@
       }
     }
   </script>
+
+  <style scoped>
+    div#app_root {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: #6E4932;
+    }
+
+    div.flex-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    img#app_logo {
+      margin: 0;
+      padding: 2vh 0 0 0;
+      height: 13%;
+      width: auto;
+    }
+
+    div#map_wrapper {
+      margin: 0;
+      padding: 2vh 0 0 0;
+      height: 100vw;
+      width: 100vw;
+    }
+
+    div#map {
+      top: 2.5vw;
+      left: 2.5vw;
+      height: 95%;
+      width: 95%;
+    }
+
+    div#contoroller {
+      flex-grow: 1;
+      padding: 0;
+      margin: 0 0 calc(100vw / 10);
+      width: 100vw;
+      background-color: red;
+    }
+
+    footer#footer_root {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: calc(100vw / 10);
+      width: 100vw;
+      background-color: white;
+    }
+  </style>
 </app>
