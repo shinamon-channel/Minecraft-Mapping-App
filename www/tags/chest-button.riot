@@ -1,0 +1,53 @@
+<chest-button>
+  <button id="chest_button_root" onclick={changeChestState}>
+    <img id="chest_img" src="{img_path}">
+  </button>
+
+  <script>
+    export default {
+      img_dir_path: 'img/',
+      img_path: 'img/chest_closed.png',
+      img_paths: {
+        close:  'chest_close.gif',
+        closed: 'chest_closed.png',
+        open:   'chest_open.gif',
+        opend:  'chest_opend.png'
+      },
+      is_chest_open: false,
+      is_animate: false,
+      animate_time: 2000,
+
+      changeChestState() {
+        this.is_chest_open = !this.is_chest_open
+        this.is_animate = true
+
+        this.updateImg()
+      },
+      updateImg() {
+        this.img_path = this.img_dir_path
+        if (this.is_chest_open) {
+          this.img_path += this.is_animate ? this.img_paths.open : this.img_paths.opend
+        } else {
+          this.img_path += this.is_animate ? this.img_paths.close : this.img_paths.closed
+        }
+
+        this.update()
+
+        if(this.is_animate) setTimeout(() => { this.updateImg() }, this.animate_time)
+        this.is_animate = false
+      }
+    }
+  </script>
+
+  <style scoped>
+    button#chest_button_root {
+      padding: 0 0 2px 0;
+      height: 18vh;
+    }
+
+    img#chest_img {
+      height: 100%;
+      width: auto;
+    }
+  </style>
+</chest-button>

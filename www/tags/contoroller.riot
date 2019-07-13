@@ -15,6 +15,7 @@
 
   <script>
     import ItemButton from './item-button.riot'
+    import ChestButton from './chest-button.riot'
 
     export default {
       items: [{
@@ -23,7 +24,8 @@
         img_path: "img/clock.png"
       }],
       components: {
-        ItemButton
+        ItemButton,
+        ChestButton
       }
     }
   </script>
@@ -41,7 +43,11 @@
     }
 
     ul#buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       margin: 0;
+      height: 100%;
     }
 
     ul#items {
