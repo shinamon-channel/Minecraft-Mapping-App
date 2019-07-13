@@ -1,0 +1,61 @@
+<contoroller>
+  <div id="contoroller_root">
+    <ul id="buttons">
+      <ul id="items">
+        <li  each="{ item in items }">
+          <item-button { ...item }></item-button>
+        </li>
+      </ul>
+
+      <chest-button></chest-button>
+    </ul>
+
+    <steve-model></steve-model>
+  </div>
+
+  <script>
+    import ItemButton from './item-button.riot'
+
+    export default {
+      items: [{
+        img_path: "img/compass.png"
+      },{
+        img_path: "img/clock.png"
+      }],
+      components: {
+        ItemButton
+      }
+    }
+  </script>
+
+  <style scoped>
+    div#contoroller_root {
+      height: 100%;
+      width: 100%;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul#buttons {
+      margin: 0;
+    }
+
+    ul#items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 0 0 3vw;
+      width: 30vw;
+    }
+
+    li {
+      list-style: none;
+      height: 7vh;
+      width: 7vh;
+    }
+  </style>
+</contoroller>
