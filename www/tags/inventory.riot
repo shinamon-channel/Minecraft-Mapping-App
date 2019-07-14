@@ -1,0 +1,74 @@
+<inventory>
+  <div id="inventory_root">
+    <h1 id="chest_name">Chest</h1>
+    <ul>
+      <!-- TODO: riot.jsのeachが遅すぎてDOM生成に時間がかかりすぎる -->
+      <li each="{ map in map_list }" class="map-list">
+        <button class="map-button">
+          <img src="{img_path}" if={map.id != null} class="map-icon">
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // test data
+    import {maps_test} from './test/test_data.js'
+
+    export default {
+      map_list: [],
+      img_path: 'img/map_writing.png',
+
+      onMounted() {
+        this.map_list = maps_test
+
+        while (this.map_list.length < 30) {
+          this.map_list.push({
+            id: null
+          })
+        }
+      }
+    }
+  </script>
+
+  <style scoped>
+    div#inventory_root {
+      position: fixed;
+      top: 20vh;
+      left: 10vw;
+      margin: 0;
+      width: 80vw;
+      background-color: white;
+    }
+
+    h1#chest_name {
+      margin: 0 0 0 10px;
+      text-align: left;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 0 3vh 0;
+      margin: 0 4px;
+    }
+
+    li.map-list {
+      margin: 4px 0;
+      height: calc(80vw / 6 - 4px);
+      width: calc(80vw / 6 - 4px);
+    }
+
+    button.map-button {
+      height: 100%;
+      width: 100%;
+      background-color: grey;
+    }
+
+    img.map-icon {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</inventory>

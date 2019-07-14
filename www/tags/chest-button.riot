@@ -3,7 +3,16 @@
     <img id="chest_img" src="{img_path}">
   </button>
 
+  <!-- TODO: app.riotでマウント・操作できるようにしたい -->
+  <div id="inventory_wrapper" if={is_chest_open}>
+    <div id="fade_dark" onclick={changeChestState}></div>
+    <inventory></inventory>
+  </div>
+  <!-- ここまで -->
+
   <script>
+    import Inventory from './inventory.riot'
+
     export default {
       img_dir_path: 'img/',
       img_path: 'img/chest_closed.png',
@@ -16,6 +25,10 @@
       is_chest_open: false,
       is_animate: false,
       animate_time: 2000,
+
+      components: {
+        Inventory
+      },
 
       changeChestState() {
         this.is_chest_open = !this.is_chest_open
@@ -48,6 +61,21 @@
     img#chest_img {
       height: 100%;
       width: auto;
+    }
+
+    div#inventory_wrapper {
+      height: 0;
+      width: 0;
+    }
+
+    div#fade_dark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #000000;
+      opacity: 0.3;
     }
   </style>
 </chest-button>
