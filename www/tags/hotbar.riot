@@ -8,33 +8,15 @@
   </ul>
 
   <script>
+    import {hotbar_test} from './test/test_data.js'
+
     export default {
-      items: [
-        {
-          img_path: "hoge/fuga.png",
-          is_writing: false
-        },
-        {
-          img_path: "hoge/fuga.png",
-          is_writing: false
-        },
-        {
-          img_path: "hoge/fuga.png",
-          is_writing: true
-        },
-        {
-          img_path: "hoge/fuga.png",
-          is_writing: false
-        },
-        {
-          img_path: "hoge/fuga.png",
-          is_writing: false
-        },
-        {
-          img_path: "hoge/fuga.png",
-          is_writing: false
-        }
-      ]
+      items: [],
+
+      onMounted() {
+        this.items = hotbar_test
+        console.log(hotbar_test)
+      }
     }
   </script>
 
