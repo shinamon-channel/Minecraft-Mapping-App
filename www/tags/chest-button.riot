@@ -37,6 +37,8 @@
         this.updateImg()
       },
       updateImg() {
+        this.update()
+
         this.img_path = this.img_dir_path
         if (this.is_chest_open) {
           this.img_path += this.is_animate ? this.img_paths.open : this.img_paths.opend
